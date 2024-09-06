@@ -28,11 +28,3 @@ public:
         
     }
 };
-
-// traverse through list
-// enter each node and the next node as key and value, respectively
-// before adding, check if node already exists as key in map
-// if key exists, return false
-
-// find value of last node
-// find if value of last node is listed as a 
