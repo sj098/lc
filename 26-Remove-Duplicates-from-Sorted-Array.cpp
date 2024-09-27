@@ -1,16 +1,13 @@
 class Solution {
 public:
     int removeDuplicates(vector<int>& nums) {
-        auto itr = nums.begin();
-        while (itr != nums.end()) {
-            if (itr + 1 != nums.end() && *itr == *(itr + 1)) {
-                nums.erase(itr + 1);
-            } else {
-                ++itr;
+        auto unique = nums.begin();
+        for (auto itr = nums.begin() + 1; itr != nums.end(); itr++) {
+            if (*itr != *unique) {
+                unique++;
+                *unique = *itr;
             }
         }
-        
-        return nums.size();
-        
+        return distance(nums.begin(), unique) + 1;
     }
 };
